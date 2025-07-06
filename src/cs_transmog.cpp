@@ -44,7 +44,8 @@ public:
             { "",          HandleDisableTransMogVisual,   SEC_PLAYER,    Console::No },
             { "sync",      HandleSyncTransMogCommand,     SEC_PLAYER,    Console::No },
             { "portable",  HandleTransmogPortableCommand, SEC_PLAYER,    Console::No },
-            { "interface", HandleInterfaceOption,         SEC_PLAYER,    Console::No }
+            { "interface", HandleInterfaceOption,         SEC_PLAYER,    Console::No },
+            { "has",       HandleQueryAppearance,         SEC_PLAYER,    Console::No }
         };
 
         static ChatCommandTable commandTable =
@@ -308,6 +309,47 @@ public:
     {
         handler->GetPlayer()->UpdatePlayerSetting("mod-transmog", SETTING_VENDOR_INTERFACE, enable);
         handler->SendSysMessage(enable ? LANG_CMD_TRANSMOG_VENDOR_INTERFACE_ENABLE : LANG_CMD_TRANSMOG_VENDOR_INTERFACE_DISABLE);
+        return true;
+    }
+
+    static bool HandleQueryAppearance(ChatHandler* handler, ItemTemplate const* itemTemplate)
+    {
+        if (!sTransmogrification->GetUseCollectionSystem())
+        {
+            handler->SendSysMessage("Appearance collection system is disabled.");
+            return true;
+        }
+
+        if (!itemTemplate)
+        {
+            handler->SendSysMessage("Invalid item specified.");
+            return false;
+        }
+
+        Player* player = handler->GetPlayer();
+        uint32 accountId = player->GetSession()->GetAccountId();
+        uint32 itemId = itemTemplate->ItemId;
+        
+        bool hasAppearance = sTransmogrification->HasCollectedAppearance(accountId, itemId);
+        
+        std::string itemName = itemTemplate->Name1;
+        int loc_index = player->GetSession()->GetSessionDbLocaleIndex();
+        if (ItemLocale const* il = sObjectMgr->GetItemLocale(itemId))
+            ObjectMgr::GetLocaleString(il->Name, loc_index, itemName);
+        
+        std::stringstream tempStream;
+        tempStream << std::hex << ItemQualityColors[itemTemplate->Quality];
+        std::string itemQuality = tempStream.str();
+
+        if (hasAppearance)
+        {
+            handler->PSendSysMessage("TRANSMOG_QUERY_RESULT:{}:1:{}", itemId, itemName);
+        }
+        else
+        {
+            handler->PSendSysMessage("TRANSMOG_QUERY_RESULT:{}:0:{}", itemId, itemName);
+        }
+                
         return true;
     }
 };

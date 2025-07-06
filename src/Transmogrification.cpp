@@ -483,6 +483,15 @@ bool Transmogrification::AddCollectedAppearance(uint32 accountId, uint32 itemId)
     return false;
 }
 
+bool Transmogrification::HasCollectedAppearance(uint32 accountId, uint32 itemId) const
+{
+    auto it = collectionCache.find(accountId);
+    if (it == collectionCache.end())
+        return false;
+    
+    return std::find(it->second.begin(), it->second.end(), itemId) != it->second.end();
+}
+
 TransmogAcoreStrings Transmogrification::Transmogrify(Player* player, uint32 itemEntry, uint8 slot, /*uint32 newEntry, */bool no_cost) {
     if (itemEntry == UINT_MAX) // Hidden transmog
     {
