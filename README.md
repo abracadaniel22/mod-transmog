@@ -4,6 +4,14 @@
 
 This is a module for [AzerothCore](http://www.azerothcore.org) that adds transmog feature, it's based on [Rochet2 Transmog Script](http://rochet2.github.io/Transmogrification.html) 
 
+## Fork by Abracadaniel22
+
+This fork adds a new `.transmog has [itemid]` command used by the [Transmog Collection](https://github.com/abracadaniel22/transmog-collection) addon to query if appearances have been collected. Additionally, it changes the appearance collected link colour to pink to match retail.
+
+![02](https://github.com/user-attachments/assets/ec0525b4-eeec-454d-a5b0-3a144f778808)
+
+![01](https://github.com/user-attachments/assets/b6659bb9-be72-4555-91a0-de8f1d11bb3b)
+
 ## Important notes
 
 You have to use at least this AzerothCore commit:
@@ -34,10 +42,10 @@ You can do clone it via git under the azerothcore/modules directory:
 
 ```sh
 cd path/to/azerothcore/modules
-git clone https://github.com/azerothcore/mod-transmog.git
+git clone https://github.com/abracadaniel22/mod-transmog.git
 ```
 
-or you can manually [download the module](https://github.com/azerothcore/mod-transmog/archive/master.zip), unzip the Transmog folder and place it under the `azerothcore/modules` directory.
+or you can manually [download the module](https://github.com/abracadaniel22/mod-transmog/archive/master.zip), unzip the Transmog folder and place it under the `azerothcore/modules` directory.
 
 ### 2) Import the SQL to the right Database (auth, world or characters)
 
