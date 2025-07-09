@@ -8,7 +8,11 @@ This is a module for [AzerothCore](http://www.azerothcore.org) that adds transmo
 
 This fork adds a new `.transmog has [itemid]` command used by the [Transmog Collection](https://github.com/abracadaniel22/transmog-collection) addon to query if appearances have been collected. Additionally, it changes the appearance collected link colour to pink to match retail.
 
+Example of command query and server response:
+
 ![02](https://github.com/user-attachments/assets/ec0525b4-eeec-454d-a5b0-3a144f778808)
+
+Example of appearance collected link colour change:
 
 ![01](https://github.com/user-attachments/assets/b6659bb9-be72-4555-91a0-de8f1d11bb3b)
 
