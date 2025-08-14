@@ -1,20 +1,20 @@
-# Transmog Module
-
-- Latest Transmog build status with azerothcore: [![Build Status](https://github.com/azerothcore/mod-transmog/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-transmog)
-
-This is a module for [AzerothCore](http://www.azerothcore.org) that adds transmog feature, it's based on [Rochet2 Transmog Script](http://rochet2.github.io/Transmogrification.html) 
-
-## Fork by Abracadaniel22
+# About this fork
 
 This fork adds a new `.transmog has [itemid]` command used by the [Transmog Collection](https://github.com/abracadaniel22/transmog-collection) addon to query if appearances have been collected. Additionally, it changes the appearance collected link colour to pink to match retail.
 
-Example of command query and server response:
+The following is a screenshot of the command `.transmog has 30987`. The server returned `TRANSMOG_QUERY_RESULT:<item id>:<0 or 1 if the apperance has been collected>:<item name>`:
 
 ![02](https://github.com/user-attachments/assets/ec0525b4-eeec-454d-a5b0-3a144f778808)
 
 Example of appearance collected link colour change:
 
 ![01](https://github.com/user-attachments/assets/b6659bb9-be72-4555-91a0-de8f1d11bb3b)
+
+# Transmog Module
+
+- Latest Transmog build status with azerothcore: [![Build Status](https://github.com/azerothcore/mod-transmog/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-transmog)
+
+This is a module for [AzerothCore](http://www.azerothcore.org) that adds transmog feature, it's based on [Rochet2 Transmog Script](http://rochet2.github.io/Transmogrification.html) 
 
 ## Important notes
 
