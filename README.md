@@ -2,7 +2,7 @@
 
 This fork adds a new `.transmog has [itemid]` command used by the [Transmog Collection](https://github.com/abracadaniel22/transmog-collection) addon to query if appearances have been collected. Additionally, it changes the appearance collected link colour to pink to match retail.
 
-The following is a screenshot of the command `.transmog has 30987`. The server returned `TRANSMOG_QUERY_RESULT:<item id>:<0 or 1 if the apperance has been collected>:<item name>`:
+The following is a screenshot of the command `.transmog has 30987`. The server returs `TRANSMOG_QUERY_RESULT:<item id>:<0 or 1 if the apperance has been collected>:<item name>`:
 
 ![02](https://github.com/user-attachments/assets/ec0525b4-eeec-454d-a5b0-3a144f778808)
 
